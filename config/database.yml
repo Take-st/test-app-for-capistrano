@@ -50,8 +50,8 @@ test:
 #
 
 production:
+  <<: *default
   database: test-app-for-capistrano_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
-
