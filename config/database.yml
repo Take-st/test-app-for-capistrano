@@ -55,9 +55,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8mb4
   database: test-app-for-capistrano_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: 127.0.0.1
   socket: /var/lib/mysql/mysql.sock
+  local_infile: true
